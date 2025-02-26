@@ -20,36 +20,25 @@ This documentation provides an overview of the **architecture, implementation, a
 
 ## Getting Started
 Follow these steps to set up and run NammaLakes locally.  
-
  **Install Docusaurus**  
 Run the following command to install Docusaurus:  
-
 npx create-docusaurus@latest my-website classic  
-
 **Or with Yarn:**  
-
 yarn create docusaurus my-website classic  
-
  **Start the Development Server**  
 Navigate to the project directory and run:  
-
 cd my-website  
-
 npm run start  
-
 This will start a local development server at http://localhost:3000/.  
 
 **Useful Commands:**  
 Clone the repository:  
-
 git clone https://github.com/NammaLakes/NammaLakes.git  
 
 **Navigate into the project directory:**  
-
 cd NammaLakes  
 
 **Install dependencies:**  
-
 npm install  
 
 ## Project Structure
@@ -66,26 +55,18 @@ npm install
 │── package.json              # Project dependencies  
 │── README.md                 # Documentation overview  
 ## Useful Commands:  
-
 **List all files in the project:**  
-
 ls -R  
 
 **Open project folder in VS Code:**  
-
 code .  
 
-## 3.System Architecture  
+## System Architecture  
 **The NammaLakes system consists of the following key components:**  
-
 **Frontend:** React + Docusaurus  
-
 **Backend:** FastAPI / Node.js (Express)  
-
 **Database:** PostgreSQL / MongoDB  
-
 **IoT Devices:** ESP32 / Raspberry Pi  
-
 **Deployment:** Docker, AWS/GCP  
 
 **Key Features:**  
@@ -96,7 +77,6 @@ code .
 
  ##  System Design  
 The system consists of multiple IoT sensors deployed across lakes, communicating with a centralized backend that processes and visualizes the data.  
-
 **IoT Sensors:** Measure parameters like pH, turbidity, temperature.  
 **Edge Processing:** Data is filtered before transmission.  
 **Cloud Backend:** Stores and processes sensor data.  
@@ -104,7 +84,6 @@ The system consists of multiple IoT sensors deployed across lakes, communicating
 
 ## 5. Implementation  
 The implementation involves:  
-
 Setting up IoT devices and configuring MQTT for communication.  
 Developing the backend with FastAPI/Express.js for data ingestion.  
 Designing the database schema in PostgreSQL/MongoDB.  
@@ -112,12 +91,9 @@ Building the frontend using React + Docusaurus for visualization.
 Deploying the system on AWS/GCP with Docker.  
 **Useful Commands:**  
 Run backend server locally:  
-
 npm run dev  
 Run database migrations:  
-
 npx prisma migrate dev  
-
 
 ## 5.Testing  
 To ensure the system runs smoothly, we perform:  
@@ -128,7 +104,6 @@ To ensure the system runs smoothly, we perform:
 
 ## 6. Deployment  
 The system is containerized with Docker and deployed on AWS/GCP using:  
-
 Docker Compose for managing multiple services.  
 CI/CD pipelines with GitHub Actions.  
 Cloud databases for high availability.  
