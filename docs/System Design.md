@@ -6,12 +6,12 @@ sidebar_label: System Design
 
 # **System Design: IoT-Based Lake Monitoring System**
 
-## **🔍 Overview**
+##  Overview
 The **IoT-Based Distributed Lake Monitoring System** is designed to **collect, process, and analyze** water quality parameters using **IoT sensors, cloud computing, and real-time analytics**. This section explains the **high-level architecture**, **hardware components**, **software stack**, and **data flow** in the system.
 
 ---
 
-## **1️⃣ High-Level Architecture**
+## **1. High-Level Architecture**
 The system consists of **three major layers**:
 
 1. **Edge Layer (IoT Sensors & Devices)**  
@@ -31,12 +31,12 @@ The system consists of **three major layers**:
 
 ---
 
-## **2️⃣ Hardware Components**
-### **📟 IoT Devices**
+## **2. Hardware Components**
+###  IoT Devices
 - **ESP32** – Low-power microcontroller for lightweight sensor nodes.
 - **Raspberry Pi** – Used for edge computing and AI-based anomaly detection.
 
-### **🌊 Water Quality Sensors**
+###  Water Quality Sensors
 | Sensor | Parameter Measured |
 |--------|-------------------|
 | **pH Sensor** | Water acidity level |
@@ -47,7 +47,7 @@ The system consists of **three major layers**:
 
 ---
 
-## **3️⃣ Software Stack**
+## **3. Software Stack**
 | Component | Technology Used |
 |-----------|----------------|
 | **Frontend** | React.js + Recharts (Data Visualization) |
@@ -58,30 +58,30 @@ The system consists of **three major layers**:
 
 ---
 
-## **4️⃣ Data Flow & Communication**
-1️⃣ **Sensor Nodes (ESP32/Raspberry Pi)** collect water quality data.  
-2️⃣ **Data is transmitted** via **MQTT/REST API** to the backend.  
-3️⃣ **Backend processes and stores** data in **PostgreSQL / MongoDB**.  
-4️⃣ **Anomaly detection module** triggers alerts if abnormal values are detected.  
-5️⃣ **Frontend Dashboard** updates in **real-time** via WebSockets.  
-6️⃣ **Alerts & Notifications** are sent via **Email/SMS** if critical thresholds are breached.  
+## **4. Data Flow & Communication**
+1. **Sensor Nodes (ESP32/Raspberry Pi)** collect water quality data.  
+2. **Data is transmitted** via **MQTT/REST API** to the backend.  
+3. **Backend processes and stores** data in **PostgreSQL / MongoDB**.  
+4. **Anomaly detection module** triggers alerts if abnormal values are detected.  
+5. **Frontend Dashboard** updates in **real-time** via WebSockets.  
+6. **Alerts & Notifications** are sent via **Email/SMS** if critical thresholds are breached.  
 
 ---
 
-## **5️⃣ System Scalability & Security**
-### **📌 Scalability Considerations**
+## **5. System Scalability & Security**
+###  Scalability Considerations
 - Supports **multiple sensor nodes** for **distributed monitoring**.
 - Uses **Kubernetes & Docker** for **scalable backend deployment**.
 - Implements **load balancing (Nginx, AWS ALB)** for handling high data influx.
 
-### **🔒 Security Measures**
+###  Security Measures
 - **TLS Encryption** for secure data transmission.
 - **OAuth2 / JWT Authentication** for API access.
 - **Role-Based Access Control (RBAC)** for user permissions.
 
 ---
 
-## **💡 Conclusion**
+##  Conclusion
 The **IoT-Based Lake Monitoring System** integrates **IoT, cloud computing, and real-time analytics** to provide an efficient and scalable solution for water quality monitoring. This design ensures **high accuracy, automation, and ease of access** for stakeholders.
 
 ---

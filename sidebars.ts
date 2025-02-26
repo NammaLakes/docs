@@ -14,12 +14,12 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
  */
  const sidebars: SidebarsConfig = {
   tutorialSidebar: [
-    'start',
+    'Introduction', 
     'problem-statement',
-    'System Architecture',  // ✅ Use correct ID
-    'System Design',        // ✅ Use correct ID
-    'Implementation',       // ✅ Use correct ID
-    'testing',              // ✅ This ID is already correct
+    'System Architecture',  
+    'System Design',       
+    'Implementation',       
+    'testing',              
   ],
 };
 

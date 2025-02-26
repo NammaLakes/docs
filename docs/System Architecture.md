@@ -11,18 +11,18 @@ The **IoT-Based Distributed Lake Monitoring System** is designed to track water 
 
 ## **System Architecture**
 
-### **1️⃣ IoT Layer (Edge Devices)**
+### 1. IoT Layer (Edge Devices)
 This layer consists of **ESP32 and Raspberry Pi** devices that collect real-time data from multiple sensors deployed across the lake.
 
 #### **Devices & Sensors**
 - **ESP32**: Used for low-power, low-cost sensor nodes  
 - **Raspberry Pi**: Used for more computationally intensive tasks (e.g., local AI/ML processing)  
 - **Sensors Used:**  
-  - ✅ **pH Sensor**: Measures water acidity  
-  - ✅ **Temperature Sensor**: Monitors temperature variations  
-  - ✅ **Turbidity Sensor**: Detects suspended particles  
-  - ✅ **Dissolved Oxygen Sensor**: Measures oxygen concentration  
-  - ✅ **Conductivity Sensor**: Determines dissolved salts and chemicals  
+  -  **pH Sensor**: Measures water acidity  
+  -  **Temperature Sensor**: Monitors temperature variations  
+  -  **Turbidity Sensor**: Detects suspended particles  
+  -  **Dissolved Oxygen Sensor**: Measures oxygen concentration  
+  -  **Conductivity Sensor**: Determines dissolved salts and chemicals  
 
 #### **Data Communication**
 - **MQTT Protocol**: Ensures low-latency real-time telemetry  
@@ -31,21 +31,21 @@ This layer consists of **ESP32 and Raspberry Pi** devices that collect real-time
 
 ---
 
-### **2️⃣ Communication Layer**
+### 2. Communication Layer
 - **MQTT Broker** (e.g., EMQX, Mosquitto) for real-time streaming  
 - **WebSockets** for real-time dashboard updates  
 - **Security Measures**:  
-  - 🔒 **TLS/SSL encryption** for secure data transmission  
-  - 🔑 **OAuth2/JWT authentication** for API access  
+  -  **TLS/SSL encryption** for secure data transmission  
+  -  **OAuth2/JWT authentication** for API access  
 
 ---
 
-### **3️⃣ Backend Layer**
+### 3. Backend Layer
 This layer is responsible for **data ingestion, processing, and API services**.
 
 #### **Frameworks Used**
-- 🚀 **FastAPI (Python)** for RESTful API development  
-- 🛠️ **Express.js (Node.js)** as an alternative backend  
+-  **FastAPI (Python)** for RESTful API development  
+-  **Express.js (Node.js)** as an alternative backend  
 
 #### **Core Functionalities**
 1. **Data Ingestion**: Accepts sensor data via **MQTT & HTTP**  
@@ -57,12 +57,12 @@ This layer is responsible for **data ingestion, processing, and API services**.
 
 ---
 
-### **4️⃣ Database Layer**
+### 4. Database Layer
 #### **Primary Database: PostgreSQL**
 Stores structured data like:
-- 📌 **Sensor metadata** (Device ID, location, calibration details)  
-- 📌 **User Management** (Roles, permissions, authentication)  
-- 📌 **Alert History** (Triggered alerts, timestamps, responses)  
+-  **Sensor metadata** (Device ID, location, calibration details)  
+-  **User Management** (Roles, permissions, authentication)  
+-  **Alert History** (Triggered alerts, timestamps, responses)  
 
 #### **Time-Series Database: MongoDB**
 - Stores high-frequency sensor readings for **fast analytics**  
@@ -72,19 +72,19 @@ Stores structured data like:
 
 ---
 
-### **5️⃣ Frontend Layer**
+### 5. Frontend Layer
 #### **Technology Stack**
-- 🖥️ **React.js**: For UI development  
-- 📄 **Docusaurus**: For system documentation  
+-  **React.js**: For UI development  
+-  **Docusaurus**: For system documentation  
 
 #### **Dashboard Features**
-- **📊 Real-time Data Visualization** with Charts.js/Recharts  
-- **⚠️ Alerts & Notifications** (Email, SMS, WebSockets)  
-- **📍 Map Integration** (Leaflet.js, Google Maps API)  
+- ** Real-time Data Visualization** with Charts.js/Recharts  
+- ** Alerts & Notifications** (Email, SMS, WebSockets)  
+- ** Map Integration** (Leaflet.js, Google Maps API)  
 
 ---
 
-### **6️⃣ Deployment & Infrastructure**
+### 6. Deployment & Infrastructure
 - **Docker**: Containerized backend, frontend, and databases  
 - **Cloud Hosting**:  
   - AWS (EC2, RDS, IoT Core)  
@@ -95,12 +95,12 @@ Stores structured data like:
 ---
 
 ## **Workflow Summary**
-1️⃣ **IoT Sensors** collect real-time water quality data via **MQTT/HTTP**  
-2️⃣ **Edge devices (ESP32/Raspberry Pi)** preprocess and transmit data  
-3️⃣ **Backend (FastAPI/Express)** processes and stores sensor data  
-4️⃣ **Anomaly detection triggers alerts for abnormal conditions**  
-5️⃣ **Frontend (React)** visualizes real-time data on dashboards  
-6️⃣ **Users receive alerts via notifications (email, SMS, web)**  
+1. **IoT Sensors** collect real-time water quality data via **MQTT/HTTP**  
+2. **Edge devices (ESP32/Raspberry Pi)** preprocess and transmit data  
+3. **Backend (FastAPI/Express)** processes and stores sensor data  
+4. **Anomaly detection triggers alerts for abnormal conditions**  
+5. **Frontend (React)** visualizes real-time data on dashboards  
+6. **Users receive alerts via notifications (email, SMS, web)**  
 
 ---
 

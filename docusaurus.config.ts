@@ -62,7 +62,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'NammaLakes',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -72,11 +72,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Introduction',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/NammaLakes',
           label: 'GitHub',
           position: 'right',
         },
@@ -90,37 +90,7 @@ const config: Config = {
           items: [
             {
               label: 'namma lakes',
-              to: '/docs/start',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              to: '/docs/Introduction',
             },
           ],
         },
