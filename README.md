@@ -82,7 +82,7 @@ The system consists of multiple IoT sensors deployed across lakes, communicating
 **Cloud Backend:** Stores and processes sensor data.  
 **Dashboard:** Interactive web UI for visualization.  
 
-## 5. Implementation  
+##  Implementation  
 The implementation involves:  
 Setting up IoT devices and configuring MQTT for communication.  
 Developing the backend with FastAPI/Express.js for data ingestion.  
@@ -95,14 +95,14 @@ npm run dev
 Run database migrations:  
 npx prisma migrate dev  
 
-## 5.Testing  
+## Testing  
 To ensure the system runs smoothly, we perform:  
 **Unit Testing:** Verify individual components (backend & frontend).  
 **Integration Testing:** Ensure seamless data flow between devices & backend.  
 **Performance Testing:** Measure system responsiveness under heavy loads.    
 **Security Testing:** Identify vulnerabilities in data transmission.  
 
-## 6. Deployment  
+##  Deployment  
 The system is containerized with Docker and deployed on AWS/GCP using:  
 Docker Compose for managing multiple services.  
 CI/CD pipelines with GitHub Actions.  
