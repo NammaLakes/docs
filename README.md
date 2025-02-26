@@ -1,41 +1,37 @@
-# Website
+# IoT-Based Distributed Lake Monitoring System
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+## Table of Contents
+1. [Start](docs/start.md)
+2. [Problem Statement](docs/problem-statement.md)
+3. [System Architecture](docs/System%20Architecture.md)
+4. [System Design](docs/System%20Design.md)
+5. [Implementation](docs/Implementation.md)
+6. [Testing](docs/testing.md)
+7. [Conclusion](docs/conclusion.md)
 
-### Installation
+## Overview
+This documentation covers the IoT-Based Distributed Lake Monitoring System, providing insights into its architecture, design, implementation, and testing.
 
-```
-$ yarn
-```
+### Start
+An introduction to the project, objectives, and its significance.
 
-### Local Development
+### Problem Statement
+Defines the key challenges and motivation for building this system.
 
-```
-$ yarn start
-```
+### System Architecture
+A high-level overview of system components and their interactions.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+### System Design
+Detailed breakdown of data flow, hardware components, and software interactions.
 
-### Build
+### Implementation
+Covers the setup of IoT devices, backend services, and frontend interfaces.
 
-```
-$ yarn build
-```
+### Testing
+Explains the methodologies used to validate the system's functionality.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+### Conclusion
+Summarizes the findings and suggests possible future enhancements.
 
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## How to Use This Documentation
+Navigate through the sections using the sidebar or click on the links above.

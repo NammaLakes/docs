@@ -1,0 +1,87 @@
+---
+id: System Design
+title: System Design - IoT-Based Lake Monitoring
+sidebar_label: System Design
+---
+
+# **System Design: IoT-Based Lake Monitoring System**
+
+## **🔍 Overview**
+The **IoT-Based Distributed Lake Monitoring System** is designed to **collect, process, and analyze** water quality parameters using **IoT sensors, cloud computing, and real-time analytics**. This section explains the **high-level architecture**, **hardware components**, **software stack**, and **data flow** in the system.
+
+---
+
+## **1️⃣ High-Level Architecture**
+The system consists of **three major layers**:
+
+1. **Edge Layer (IoT Sensors & Devices)**  
+   - Collects real-time water quality data.
+   - Uses **ESP32** and **Raspberry Pi** for data acquisition.
+   - Transmits data via **MQTT** or **REST APIs**.
+
+2. **Cloud & Processing Layer**  
+   - Uses **FastAPI (Python) / Express (Node.js)** for backend processing.
+   - Stores structured data in **PostgreSQL** and time-series data in **MongoDB**.
+   - Performs **anomaly detection** and **data analytics**.
+
+3. **Application & Visualization Layer**  
+   - Provides a **React-based dashboard** for real-time monitoring.
+   - Implements **Docusaurus** for system documentation.
+   - Uses **Leaflet.js / Google Maps API** for **geospatial visualization**.
+
+---
+
+## **2️⃣ Hardware Components**
+### **📟 IoT Devices**
+- **ESP32** – Low-power microcontroller for lightweight sensor nodes.
+- **Raspberry Pi** – Used for edge computing and AI-based anomaly detection.
+
+### **🌊 Water Quality Sensors**
+| Sensor | Parameter Measured |
+|--------|-------------------|
+| **pH Sensor** | Water acidity level |
+| **Turbidity Sensor** | Suspended particles in water |
+| **Temperature Sensor** | Water temperature |
+| **Dissolved Oxygen Sensor** | Oxygen levels in water |
+| **Conductivity Sensor** | Salinity and dissolved minerals |
+
+---
+
+## **3️⃣ Software Stack**
+| Component | Technology Used |
+|-----------|----------------|
+| **Frontend** | React.js + Recharts (Data Visualization) |
+| **Backend** | FastAPI (Python) / Express.js (Node.js) |
+| **Database** | PostgreSQL (Structured Data), MongoDB (Sensor Data) |
+| **Messaging Protocol** | MQTT (IoT Data Transfer) |
+| **Cloud Deployment** | Docker + AWS/GCP |
+
+---
+
+## **4️⃣ Data Flow & Communication**
+1️⃣ **Sensor Nodes (ESP32/Raspberry Pi)** collect water quality data.  
+2️⃣ **Data is transmitted** via **MQTT/REST API** to the backend.  
+3️⃣ **Backend processes and stores** data in **PostgreSQL / MongoDB**.  
+4️⃣ **Anomaly detection module** triggers alerts if abnormal values are detected.  
+5️⃣ **Frontend Dashboard** updates in **real-time** via WebSockets.  
+6️⃣ **Alerts & Notifications** are sent via **Email/SMS** if critical thresholds are breached.  
+
+---
+
+## **5️⃣ System Scalability & Security**
+### **📌 Scalability Considerations**
+- Supports **multiple sensor nodes** for **distributed monitoring**.
+- Uses **Kubernetes & Docker** for **scalable backend deployment**.
+- Implements **load balancing (Nginx, AWS ALB)** for handling high data influx.
+
+### **🔒 Security Measures**
+- **TLS Encryption** for secure data transmission.
+- **OAuth2 / JWT Authentication** for API access.
+- **Role-Based Access Control (RBAC)** for user permissions.
+
+---
+
+## **💡 Conclusion**
+The **IoT-Based Lake Monitoring System** integrates **IoT, cloud computing, and real-time analytics** to provide an efficient and scalable solution for water quality monitoring. This design ensures **high accuracy, automation, and ease of access** for stakeholders.
+
+---
