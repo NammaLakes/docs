@@ -11,8 +11,6 @@ This repository contains the **Docusaurus-powered documentation** for the **Namm
 - [Implementation](#implementation)  
 - [Testing](#testing)  
 - [Deployment](#deployment)  
-- [Contributing](#contributing)  
-- [License](#license)  
 
 ## Introduction  
 
