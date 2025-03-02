@@ -8,9 +8,7 @@ This repository contains the **Docusaurus-powered documentation** for the **Namm
 - [Project Structure](#project-structure)  
 - [System Architecture](#system-architecture)  
 - [System Design](#system-design)  
-- [Implementation](#implementation)  
-- [Testing](#testing)  
-- [Deployment](#deployment)  
+
 
 ## Introduction  
 
@@ -19,33 +17,35 @@ This repository contains the **Docusaurus-powered documentation** for the **Namm
 This documentation provides an overview of the **architecture, implementation, and deployment** of the system.  
 
 ## Getting Started
-Follow these steps to set up and run NammaLakes locally.  
- **Install Docusaurus**  
-Run the following command to install Docusaurus:  
-npx create-docusaurus@latest my-website classic  
-**Or with Yarn:**  
-yarn create docusaurus my-website classic  
+Follow these steps to set up and run NammaLakes locally.    
  **Start the Development Server**  
-Navigate to the project directory and run:  
-cd my-website  
-npm run start  
+Navigate to the project directory and run:
+```
+npm i
+npm run start      
+```  
+
 This will start a local development server at http://localhost:3000/.  
 
 **Useful Commands:**  
-Clone the repository:  
+Clone the repository: 
+``` 
 git clone https://github.com/NammaLakes/NammaLakes.git  
-
+```
 **Navigate into the project directory:**  
+```
 cd NammaLakes  
-
-**Install dependencies:**  
-npm install  
+```
+**Install dependencies:**
+```  
+npm install 
+```
 
 ## Project Structure
 
 **The NammaLakes repository is structured as follows:**  
 
-
+```
 /NammaLakes  
 │── docs/                    # Documentation files (Markdown)  
 │── src/                     # Custom components  
@@ -54,19 +54,14 @@ npm install
 │── sidebars.ts               # Sidebar structure  
 │── package.json              # Project dependencies  
 │── README.md                 # Documentation overview  
-## Useful Commands:  
-**List all files in the project:**  
-ls -R  
-
-**Open project folder in VS Code:**  
-code .  
+```
 
 ## System Architecture  
 **The NammaLakes system consists of the following key components:**  
-**Frontend:** React + Docusaurus  
-**Backend:** FastAPI / Node.js (Express)  
-**Database:** PostgreSQL / MongoDB  
-**IoT Devices:** ESP32 / Raspberry Pi  
+**Frontend:** React+Vite (Dashboard), Docusaurus (Documentation)
+**Backend:** FastAPI  
+**Database:** PostgreSQL
+**IoT Devices:** ESP8266 (NodeMCU) / Raspberry Pi  
 **Deployment:** Docker, AWS/GCP  
 
 **Key Features:**  
@@ -75,36 +70,9 @@ code .
 - Map integration for sensor locations.  
 - REST API & MQTT for seamless integration.  
 
- ##  System Design  
+ ## System Design  
 The system consists of multiple IoT sensors deployed across lakes, communicating with a centralized backend that processes and visualizes the data.  
 **IoT Sensors:** Measure parameters like pH, turbidity, temperature.  
 **Edge Processing:** Data is filtered before transmission.  
 **Cloud Backend:** Stores and processes sensor data.  
 **Dashboard:** Interactive web UI for visualization.  
-
-##  Implementation  
-The implementation involves:  
-Setting up IoT devices and configuring MQTT for communication.  
-Developing the backend with FastAPI/Express.js for data ingestion.  
-Designing the database schema in PostgreSQL/MongoDB.  
-Building the frontend using React + Docusaurus for visualization.  
-Deploying the system on AWS/GCP with Docker.  
-**Useful Commands:**  
-Run backend server locally:  
-npm run dev  
-Run database migrations:  
-npx prisma migrate dev  
-
-## Testing  
-To ensure the system runs smoothly, we perform:  
-**Unit Testing:** Verify individual components (backend & frontend).  
-**Integration Testing:** Ensure seamless data flow between devices & backend.  
-**Performance Testing:** Measure system responsiveness under heavy loads.    
-**Security Testing:** Identify vulnerabilities in data transmission.  
-
-##  Deployment  
-The system is containerized with Docker and deployed on AWS/GCP using:  
-Docker Compose for managing multiple services.  
-CI/CD pipelines with GitHub Actions.  
-Cloud databases for high availability.  
-Scalable API endpoints using AWS Lambda/FastAPI.  
