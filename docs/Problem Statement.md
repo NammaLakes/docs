@@ -1,10 +1,10 @@
 ---
-id: problem-statement
+id: why
 title: Problem Statement - IoT-Based Lake Monitoring
-sidebar_label: Problem Statement
+sidebar_label: Why NammaLake
 ---
 
-# **Problem Statement: IoT-Based Lake Monitoring System**
+# **Need for an IoT-Based Lake Monitoring System**
 
 ##  Introduction
 Water bodies such as lakes and reservoirs are critical for drinking water, irrigation, and ecosystem sustainability. However, factors such as **pollution, climate change, and human activities** have significantly impacted water quality.  
@@ -30,7 +30,7 @@ Traditional **manual monitoring** is **time-consuming, expensive, and inefficien
 
 ---
 
-##  Proposed Solution
+##  Delivrables
 ### **IoT-Based Distributed Lake Monitoring System**
 An IoT-driven **automated lake monitoring system** that utilizes **ESP32, Raspberry Pi, and cloud-based analytics** to provide:  
 1. **Real-time water quality monitoring** through multiple sensor nodes.  

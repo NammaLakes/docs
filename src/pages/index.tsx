@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useHistory } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '../components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 
