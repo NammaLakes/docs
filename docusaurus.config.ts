@@ -8,13 +8,13 @@ const config: Config = {
   title: 'Lake Monitoring System',
   tagline: 'A website for monitoring the water quality of lakes',
  
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon.ico',
 
   // Set the production url of your site here
-  url: 'https://lake-monitoring-system.netlify.app',
+  url: 'https://nammalakes.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/<NammaLakes>/',
+  baseUrl: '/nammalakes/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -64,15 +64,15 @@ const config: Config = {
     navbar: {
       title: 'NammaLakes',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'NammaLakes',
+        src: 'img/nammalakes.png',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Introduction',
+          label: 'Docs',
         },
         
         {
@@ -83,19 +83,8 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'namma lakes',
-              to: '/docs/Introduction',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      style: 'light',
+      copyright: `Copyright © ${new Date().getFullYear()} NammaLakes.`,
     },
     prism: {
       theme: prismThemes.github,
