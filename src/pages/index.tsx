@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import { useHistory } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import HomepageFeatures from '../components/HomepageFeatures';
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+import { ReactNode } from 'react';
+
 
 import Heading from '@theme/Heading';
 
