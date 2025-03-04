@@ -1,14 +1,34 @@
-name: CI
-on: [push]
+name: Deploy Docs
+
+on:
+  workflow_dispatch:
+    inputs:
+      unconditional-invoking:
+        description: 'Deploy Manually'
+        type: boolean
+        required: true
+        default: true
+  push:
+    branches: ["main"]
+
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: redkubes/docusaurus-deploy-action@v1
-        with:
-          source-folder: /
-          git-user: $SOME_USERNAME
-          git-password: ${{ secrets.GITHUB_TOKEN }}
-          deployment-branch: gh-pages
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: DeployPage
+        uses: ayaka-notes/Docusaurus-GitPage-Action@v1.2
