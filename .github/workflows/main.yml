@@ -1,34 +1,45 @@
-name: Deploy Docs
+name: Deploy Docusaurus to GitHub Pages
 
 on:
-  workflow_dispatch:
-    inputs:
-      unconditional-invoking:
-        description: 'Deploy Manually'
-        type: boolean
-        required: true
-        default: true
   push:
-    branches: ["main"]
-
+    branches:
+      - main 
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: DeployPage
-        uses: ayaka-notes/Docusaurus-GitPage-Action@v1.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Update Base URL in Docusaurus Config
+        run: sed -i "s|baseUrl: '/'|baseUrl: '/${{ github.event.repository.name }}/'|g" docusaurus.config.js
+
+      - name: Build Docusaurus Site
+        run: npm run build
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
