@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/icon.ico',
 
   // Production URL for GitHub Pages
-  url: 'https://NammaLakes.github.io/',
+  url: 'https://nammalakes.github.io/',
 
   // Base URL for GitHub Pages deployment (matches repository name)
   baseUrl: '/NammaLakes/',

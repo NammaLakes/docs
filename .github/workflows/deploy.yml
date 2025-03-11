@@ -3,10 +3,11 @@ name: Deploy Docusaurus Site
 on:
   push:
     branches:
-      - main  # Change this if your default branch is different
+      - main  # Runs when pushing to main
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   deploy:
@@ -27,3 +28,14 @@ jobs:
 
       - name: Build Docusaurus Site
         run: npm run build
+
+      - name: Create .nojekyll file
+        run: touch build/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          keep_files: false
