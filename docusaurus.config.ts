@@ -1,31 +1,31 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
   title: 'Lake Monitoring System',
   tagline: 'A website for monitoring the water quality of lakes',
+ 
   favicon: 'img/icon.ico',
 
-  // Production URL for GitHub Pages
+  // Set the production url of your site here
   url: 'https://nammalakes.github.io/',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/docs/',
 
-  // Base URL for GitHub Pages deployment (matches repository name)
-  baseUrl: '/NammaLakes/',
-
-  // GitHub Pages deployment configuration
-  organizationName: 'NammaLakes', // GitHub org/user name
-  projectName: 'NammaLakes', // Repository name
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'NammaLakes', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
   deploymentBranch: 'gh-pages',
-
+  
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Ensures URLs are clean (avoids .html extensions)
-  trailingSlash: false,
-
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -36,43 +36,22 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.ts'),
+          sidebarPath: './sidebars.ts',
+          routeBasePath: '/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
+        blog: false,
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
-    // Social preview image
-    image: 'img/docusaurus-social-card.jpg',
-
     navbar: {
       title: 'NammaLakes',
       logo: {
         alt: 'NammaLakes',
         src: 'img/nammalakes.png',
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
+      items: [        
         {
           href: 'https://github.com/NammaLakes',
           label: 'GitHub',
@@ -80,12 +59,10 @@ const config: Config = {
         },
       ],
     },
-
     footer: {
       style: 'light',
       copyright: `Copyright © ${new Date().getFullYear()} NammaLakes.`,
     },
-
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

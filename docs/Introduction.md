@@ -1,8 +1,5 @@
-
-
-
-
- 
+---
+slug : /
 ---
 
 #  Lake Monitoring System

@@ -1,9 +1,0 @@
-[submodule "node"]
-	path = node
-	url = https://github.com/NammaLakes/node
-[submodule "backend"]
-	path = backend
-	url = https://github.com/NammaLakes/backend
-[submodule "dashboard"]
-	path = dashboard
-	url = https://github.com/NammaLakes/dashboard
