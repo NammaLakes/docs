@@ -10,7 +10,7 @@ sidebar_label: System Design
 The **IoT-Based Distributed Lake Monitoring System** is designed to **collect, process, and analyze** water quality parameters using **IoT sensors, cloud computing, and real-time analytics**. This section explains the **high-level architecture**, **hardware components**, **software stack**, and **data flow** in the system.
 
 ---
-
+![System Architecture](arch.jpeg)
 ## **1. High-Level Architecture**
 The system consists of **three major layers**:
 
