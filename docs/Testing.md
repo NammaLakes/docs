@@ -33,13 +33,13 @@ Ensures **data integrity, API functionality, and database performance**.
 ###  API Testing
 Tested using **Pytest**.
 
-| API Endpoint | Test Case | Expected Result |
-|-------------|----------|----------------|
-| **POST** `/api/v1/sensors/readings` | Send sensor data | Data stored successfully |
-| **GET** `/api/v1/sensors/readings/latest` | Fetch latest readings | Returns valid JSON response |
-| **GET** `/api/v1/alerts` | Query for anomalies | Returns correct alerts |
-| **GET** `/api/v1/sensors` | Retrieve all sensor nodes | Returns list of sensors |
-| **GET** `/api/v1/dashboard/stats` | Fetch dashboard statistics | Returns system stats |
+| Method | API Endpoint | Test Case | Expected Result |
+|-------------|----------|----------------|-----------------|
+| **POST** | `/api/v1/sensors/readings` | Send sensor data | Data stored successfully |
+| **GET** | `/api/v1/sensors/readings/latest` | Fetch latest readings | Returns valid JSON response |
+| **GET** | `/api/v1/alerts` | Query for anomalies | Returns correct alerts |
+| **GET** | `/api/v1/sensors` | Retrieve all sensor nodes | Returns list of sensors |
+| **GET** | `/api/v1/dashboard/stats` | Fetch dashboard statistics | Returns system stats |
 
 ### Database Testing
 | Test Type | Description |
@@ -52,9 +52,6 @@ Tested using **Pytest**.
 
 ## **3. Frontend Testing**
 Ensures **UI/UX quality, responsiveness, and real-time data updates**.
-
-###  UI Testing
-Tested using **Cypress / Selenium**.
 
 | Test Case | Expected Behavior |
 |-----------|------------------|

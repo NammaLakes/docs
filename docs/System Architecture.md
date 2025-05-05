@@ -11,7 +11,7 @@ sidebar_label: System Architecture
 It is crucial to grasp how various components interact to achieve seamless data collection, processing, and visualization. It provides insights into the roles of IoT devices, communication protocols, backend services, and frontend interfaces, ensuring a holistic view of the system's functionality and scalability.
 The **IoT-Based Distributed Lake Monitoring System** is designed to track water quality parameters in real time across multiple sensor nodes deployed in a lake. The system provides an **interactive dashboard**, **alerts for anomalies**, and **geospatial mapping** of sensor locations.
 
-![System Architecture](arch.jpeg)
+![System Architecture](sys_arch.svg)
 ## **System Architecture**
 
 The NammaLakes platform is structured into five distinct but interconnected layers, each serving specific functions within the ecosystem:
