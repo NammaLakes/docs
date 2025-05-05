@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">System Design - IoT-Based Lake Monitoring | Lake Monitoring System</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://nammalakes.github.io/docs/System Design"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="System Design - IoT-Based Lake Monitoring | Lake Monitoring System"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/docs/img/icon.ico"><link data-rh="true" rel="canonical" href="https://nammalakes.github.io/docs/System Design"><link data-rh="true" rel="alternate" href="https://nammalakes.github.io/docs/System Design" hreflang="en"><link data-rh="true" rel="alternate" href="https://nammalakes.github.io/docs/System Design" hreflang="x-default"><link rel="stylesheet" href="/docs/assets/css/styles.9e4803b6.css">
-<script src="/docs/assets/js/runtime~main.c242f9fd.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.4f49267a.js" defer="defer"></script>
 <script src="/docs/assets/js/main.d1fada3a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -12,7 +12,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
 <p>The <strong>IoT-Based Distributed Lake Monitoring System</strong> is designed to <strong>collect, process, and analyze</strong> water quality parameters using <strong>IoT sensors, cloud computing, and real-time analytics</strong>. This section explains the <strong>high-level architecture</strong>, <strong>hardware components</strong>, <strong>software stack</strong>, and <strong>data flow</strong> in the system.</p>
 <hr>
-<p><img decoding="async" loading="lazy" alt="System Architecture" src="/docs/assets/images/arch-9df43c2762bd8fdb5154c2b2cc819243.jpeg" width="986" height="866" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="System Architecture" src="/docs/assets/images/sys_design-b3436aaecacade5a7ac6c7609bf842a1.svg" width="1500" height="468" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-high-level-architecture"><strong>1. High-Level Architecture</strong><a href="#1-high-level-architecture" class="hash-link" aria-label="Direct link to 1-high-level-architecture" title="Direct link to 1-high-level-architecture">​</a></h2>
 <p>The system consists of <strong>three major layers</strong>:</p>
 <ol>
@@ -27,8 +27,8 @@
 <li>
 <p><strong>Cloud &amp; Processing Layer</strong></p>
 <ul>
-<li>Uses <strong>FastAPI (Python) / Express (Node.js)</strong> for backend processing.</li>
-<li>Stores structured data in <strong>PostgreSQL</strong> and time-series data in <strong>MongoDB</strong>.</li>
+<li>Uses <strong>FastAPI (Python)</strong> for backend processing.</li>
+<li>Stores structured data in <strong>PostgreSQL</strong>.</li>
 <li>Performs <strong>anomaly detection</strong> and <strong>data analytics</strong>.</li>
 </ul>
 </li>
@@ -37,7 +37,7 @@
 <ul>
 <li>Provides a <strong>React-based dashboard</strong> for real-time monitoring.</li>
 <li>Implements <strong>Docusaurus</strong> for system documentation.</li>
-<li>Uses <strong>Leaflet.js / Google Maps API</strong> for <strong>geospatial visualization</strong>.</li>
+<li>Uses <strong>Leaflet.js</strong> for <strong>geospatial visualization</strong>.</li>
 </ul>
 </li>
 </ol>
@@ -49,16 +49,16 @@
 <li><strong>Raspberry Pi</strong> – Used for edge computing and AI-based anomaly detection.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="water-quality-sensors">Water Quality Sensors<a href="#water-quality-sensors" class="hash-link" aria-label="Direct link to Water Quality Sensors" title="Direct link to Water Quality Sensors">​</a></h3>
-<table><thead><tr><th>Sensor</th><th>Parameter Measured</th></tr></thead><tbody><tr><td><strong>pH Sensor</strong></td><td>Water acidity level</td></tr><tr><td><strong>Turbidity Sensor</strong></td><td>Suspended particles in water</td></tr><tr><td><strong>Temperature Sensor</strong></td><td>Water temperature</td></tr><tr><td><strong>Dissolved Oxygen Sensor</strong></td><td>Oxygen levels in water</td></tr><tr><td><strong>Conductivity Sensor</strong></td><td>Salinity and dissolved minerals</td></tr></tbody></table>
+<table><thead><tr><th>Sensor</th><th>Parameter Measured</th></tr></thead><tbody><tr><td><strong>pH Sensor</strong></td><td>Water acidity level</td></tr><tr><td><strong>Temperature Sensor</strong></td><td>Water temperature</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-software-stack"><strong>3. Software Stack</strong><a href="#3-software-stack" class="hash-link" aria-label="Direct link to 3-software-stack" title="Direct link to 3-software-stack">​</a></h2>
-<table><thead><tr><th>Component</th><th>Technology Used</th></tr></thead><tbody><tr><td><strong>Frontend</strong></td><td>React.js + Recharts (Data Visualization)</td></tr><tr><td><strong>Backend</strong></td><td>FastAPI (Python) / Express.js (Node.js)</td></tr><tr><td><strong>Database</strong></td><td>PostgreSQL (Structured Data), MongoDB (Sensor Data)</td></tr><tr><td><strong>Messaging Protocol</strong></td><td>MQTT (IoT Data Transfer)</td></tr><tr><td><strong>Cloud Deployment</strong></td><td>Docker + AWS/GCP</td></tr></tbody></table>
+<table><thead><tr><th>Component</th><th>Technology Used</th></tr></thead><tbody><tr><td><strong>Frontend</strong></td><td>React.js + Recharts (Data Visualization)</td></tr><tr><td><strong>Backend</strong></td><td>FastAPI (Python)</td></tr><tr><td><strong>Database</strong></td><td>PostgreSQL (Structured Data)</td></tr><tr><td><strong>Messaging Protocol</strong></td><td>MQTT (IoT Data Transfer)</td></tr><tr><td><strong>Cloud Deployment</strong></td><td>Docker + AWS</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-data-flow--communication"><strong>4. Data Flow &amp; Communication</strong><a href="#4-data-flow--communication" class="hash-link" aria-label="Direct link to 4-data-flow--communication" title="Direct link to 4-data-flow--communication">​</a></h2>
 <ol>
 <li><strong>Sensor Nodes (ESP32/Raspberry Pi)</strong> collect water quality data.</li>
 <li><strong>Data is transmitted</strong> via <strong>MQTT/REST API</strong> to the backend.</li>
-<li><strong>Backend processes and stores</strong> data in <strong>PostgreSQL / MongoDB</strong>.</li>
+<li><strong>Backend processes and stores</strong> data in <strong>PostgreSQL</strong>.</li>
 <li><strong>Anomaly detection module</strong> triggers alerts if abnormal values are detected.</li>
 <li><strong>Frontend Dashboard</strong> updates in <strong>real-time</strong> via WebSockets.</li>
 <li><strong>Alerts &amp; Notifications</strong> are sent via <strong>Email/SMS</strong> if critical thresholds are breached.</li>
@@ -68,18 +68,12 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="scalability-considerations">Scalability Considerations<a href="#scalability-considerations" class="hash-link" aria-label="Direct link to Scalability Considerations" title="Direct link to Scalability Considerations">​</a></h3>
 <ul>
 <li>Supports <strong>multiple sensor nodes</strong> for <strong>distributed monitoring</strong>.</li>
-<li>Uses <strong>Kubernetes &amp; Docker</strong> for <strong>scalable backend deployment</strong>.</li>
-<li>Implements <strong>load balancing (Nginx, AWS ALB)</strong> for handling high data influx.</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="security-measures">Security Measures<a href="#security-measures" class="hash-link" aria-label="Direct link to Security Measures" title="Direct link to Security Measures">​</a></h3>
-<ul>
-<li><strong>TLS Encryption</strong> for secure data transmission.</li>
-<li><strong>OAuth2 / JWT Authentication</strong> for API access.</li>
-<li><strong>Role-Based Access Control (RBAC)</strong> for user permissions.</li>
+<li>Uses <strong>Docker</strong> for <strong>scalable backend deployment</strong>.</li>
+<li>Implements <strong>load balancing (AWS ALB)</strong> for handling high data influx.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
 <p>The <strong>IoT-Based Lake Monitoring System</strong> integrates <strong>IoT, cloud computing, and real-time analytics</strong> to provide an efficient and scalable solution for water quality monitoring. This design ensures <strong>high accuracy, automation, and ease of access</strong> for stakeholders.</p>
-<hr></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/System Architecture"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">System Architecture</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/Implementation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Implementation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#1-high-level-architecture" class="table-of-contents__link toc-highlight"><strong>1. High-Level Architecture</strong></a></li><li><a href="#2-hardware-components" class="table-of-contents__link toc-highlight"><strong>2. Hardware Components</strong></a><ul><li><a href="#iot-devices" class="table-of-contents__link toc-highlight">IoT Devices</a></li><li><a href="#water-quality-sensors" class="table-of-contents__link toc-highlight">Water Quality Sensors</a></li></ul></li><li><a href="#3-software-stack" class="table-of-contents__link toc-highlight"><strong>3. Software Stack</strong></a></li><li><a href="#4-data-flow--communication" class="table-of-contents__link toc-highlight"><strong>4. Data Flow &amp; Communication</strong></a></li><li><a href="#5-system-scalability--security" class="table-of-contents__link toc-highlight"><strong>5. System Scalability &amp; Security</strong></a><ul><li><a href="#scalability-considerations" class="table-of-contents__link toc-highlight">Scalability Considerations</a></li><li><a href="#security-measures" class="table-of-contents__link toc-highlight">Security Measures</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NammaLakes.</div></div></div></footer></div>
+<hr></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/System Architecture"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">System Architecture</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/Implementation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Implementation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#1-high-level-architecture" class="table-of-contents__link toc-highlight"><strong>1. High-Level Architecture</strong></a></li><li><a href="#2-hardware-components" class="table-of-contents__link toc-highlight"><strong>2. Hardware Components</strong></a><ul><li><a href="#iot-devices" class="table-of-contents__link toc-highlight">IoT Devices</a></li><li><a href="#water-quality-sensors" class="table-of-contents__link toc-highlight">Water Quality Sensors</a></li></ul></li><li><a href="#3-software-stack" class="table-of-contents__link toc-highlight"><strong>3. Software Stack</strong></a></li><li><a href="#4-data-flow--communication" class="table-of-contents__link toc-highlight"><strong>4. Data Flow &amp; Communication</strong></a></li><li><a href="#5-system-scalability--security" class="table-of-contents__link toc-highlight"><strong>5. System Scalability &amp; Security</strong></a><ul><li><a href="#scalability-considerations" class="table-of-contents__link toc-highlight">Scalability Considerations</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NammaLakes.</div></div></div></footer></div>
 </body>
 </html>

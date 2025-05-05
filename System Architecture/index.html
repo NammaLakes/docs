@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">IoT-Based Distributed Lake Monitoring System | Lake Monitoring System</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://nammalakes.github.io/docs/System Architecture"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="IoT-Based Distributed Lake Monitoring System | Lake Monitoring System"><meta data-rh="true" name="description" content="Understanding the Architecture"><meta data-rh="true" property="og:description" content="Understanding the Architecture"><link data-rh="true" rel="icon" href="/docs/img/icon.ico"><link data-rh="true" rel="canonical" href="https://nammalakes.github.io/docs/System Architecture"><link data-rh="true" rel="alternate" href="https://nammalakes.github.io/docs/System Architecture" hreflang="en"><link data-rh="true" rel="alternate" href="https://nammalakes.github.io/docs/System Architecture" hreflang="x-default"><link rel="stylesheet" href="/docs/assets/css/styles.9e4803b6.css">
-<script src="/docs/assets/js/runtime~main.c242f9fd.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.4f49267a.js" defer="defer"></script>
 <script src="/docs/assets/js/main.d1fada3a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -12,81 +12,80 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="understanding-the-architecture"><strong>Understanding the Architecture</strong><a href="#understanding-the-architecture" class="hash-link" aria-label="Direct link to understanding-the-architecture" title="Direct link to understanding-the-architecture">​</a></h2>
 <p>It is crucial to grasp how various components interact to achieve seamless data collection, processing, and visualization. It provides insights into the roles of IoT devices, communication protocols, backend services, and frontend interfaces, ensuring a holistic view of the system&#x27;s functionality and scalability.
 The <strong>IoT-Based Distributed Lake Monitoring System</strong> is designed to track water quality parameters in real time across multiple sensor nodes deployed in a lake. The system provides an <strong>interactive dashboard</strong>, <strong>alerts for anomalies</strong>, and <strong>geospatial mapping</strong> of sensor locations.</p>
-<p><img decoding="async" loading="lazy" alt="System Architecture" src="/docs/assets/images/data_flow-fae8c8fc2f57c0f83f9e046868303020.jpeg" width="1000" height="1202" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="System Architecture" src="/docs/assets/images/arch-9df43c2762bd8fdb5154c2b2cc819243.jpeg" width="986" height="866" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="system-architecture"><strong>System Architecture</strong><a href="#system-architecture" class="hash-link" aria-label="Direct link to system-architecture" title="Direct link to system-architecture">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-iot-layer-edge-devices">1. IoT Layer (Edge Devices)<a href="#1-iot-layer-edge-devices" class="hash-link" aria-label="Direct link to 1. IoT Layer (Edge Devices)" title="Direct link to 1. IoT Layer (Edge Devices)">​</a></h3>
+<p>The NammaLakes platform is structured into five distinct but interconnected layers, each serving specific functions within the ecosystem:</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="1-iot-layer-edge-devices">1. IoT Layer (Edge Devices)<a href="#1-iot-layer-edge-devices" class="hash-link" aria-label="Direct link to 1. IoT Layer (Edge Devices)" title="Direct link to 1. IoT Layer (Edge Devices)">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="2-communication-layer">2. Communication Layer<a href="#2-communication-layer" class="hash-link" aria-label="Direct link to 2. Communication Layer" title="Direct link to 2. Communication Layer">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="3-backend-layer">3. Backend Layer<a href="#3-backend-layer" class="hash-link" aria-label="Direct link to 3. Backend Layer" title="Direct link to 3. Backend Layer">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="4-database-layer">4. Database Layer<a href="#4-database-layer" class="hash-link" aria-label="Direct link to 4. Database Layer" title="Direct link to 4. Database Layer">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="5-frontend-layer">5. Frontend Layer<a href="#5-frontend-layer" class="hash-link" aria-label="Direct link to 5. Frontend Layer" title="Direct link to 5. Frontend Layer">​</a></h4>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-iot-layer-edge-devices-1">1. IoT Layer (Edge Devices)<a href="#1-iot-layer-edge-devices-1" class="hash-link" aria-label="Direct link to 1. IoT Layer (Edge Devices)" title="Direct link to 1. IoT Layer (Edge Devices)">​</a></h3>
 <p>This layer consists of <strong>ESP32 and Raspberry Pi</strong> devices that collect real-time data from multiple sensors deployed across the lake.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="devices--sensors"><strong>Devices &amp; Sensors</strong><a href="#devices--sensors" class="hash-link" aria-label="Direct link to devices--sensors" title="Direct link to devices--sensors">​</a></h4>
 <ul>
 <li><strong>ESP32</strong>: Used for low-power, low-cost sensor nodes</li>
-<li><strong>Raspberry Pi</strong>: Used for more computationally intensive tasks (e.g., local AI/ML processing)</li>
+<li><strong>Raspberry Pi</strong>: Used for more computationally intensive tasks (e.g., local data processing)</li>
 <li><strong>Sensors Used:</strong>
 <ul>
 <li><strong>pH Sensor</strong>: Measures water acidity</li>
 <li><strong>Temperature Sensor</strong>: Monitors temperature variations</li>
-<li><strong>Turbidity Sensor</strong>: Detects suspended particles</li>
-<li><strong>Dissolved Oxygen Sensor</strong>: Measures oxygen concentration</li>
-<li><strong>Conductivity Sensor</strong>: Determines dissolved salts and chemicals</li>
-</ul>
-</li>
-</ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="data-communication"><strong>Data Communication</strong><a href="#data-communication" class="hash-link" aria-label="Direct link to data-communication" title="Direct link to data-communication">​</a></h4>
-<ul>
-<li><strong>MQTT Protocol</strong>: Ensures low-latency real-time telemetry</li>
-<li><strong>HTTP REST API</strong>: Used for periodic updates</li>
-<li><strong>Edge Processing</strong>: Filters noisy sensor data before transmission</li>
-</ul>
-<hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-communication-layer">2. Communication Layer<a href="#2-communication-layer" class="hash-link" aria-label="Direct link to 2. Communication Layer" title="Direct link to 2. Communication Layer">​</a></h3>
-<ul>
-<li><strong>MQTT Broker</strong> (e.g., EMQX, Mosquitto) for real-time streaming</li>
-<li><strong>WebSockets</strong> for real-time dashboard updates</li>
-<li><strong>Security Measures</strong>:<!-- -->
-<ul>
-<li><strong>TLS/SSL encryption</strong> for secure data transmission</li>
-<li><strong>OAuth2/JWT authentication</strong> for API access</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-backend-layer">3. Backend Layer<a href="#3-backend-layer" class="hash-link" aria-label="Direct link to 3. Backend Layer" title="Direct link to 3. Backend Layer">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-communication-layer-1">2. Communication Layer<a href="#2-communication-layer-1" class="hash-link" aria-label="Direct link to 2. Communication Layer" title="Direct link to 2. Communication Layer">​</a></h3>
+<p>This intermediate layer enables reliable data transmission between edge devices and backend services.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="protocols-and-infrastructure">Protocols and Infrastructure<a href="#protocols-and-infrastructure" class="hash-link" aria-label="Direct link to Protocols and Infrastructure" title="Direct link to Protocols and Infrastructure">​</a></h4>
+<ul>
+<li><strong>MQTT Protocol:</strong> Primary communication method providing low-latency, reliable telemetry transmission</li>
+<li><strong>MQTT Broker:</strong> Mosquitto implementation for message queuing and distribution</li>
+<li><strong>HTTP REST APIs:</strong> Secondary method for periodic updates and configuration changes</li>
+<li><strong>WebSockets:</strong> Supporting bidirectional real-time communication for dashboard updates</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-backend-layer-1">3. Backend Layer<a href="#3-backend-layer-1" class="hash-link" aria-label="Direct link to 3. Backend Layer" title="Direct link to 3. Backend Layer">​</a></h3>
 <p>This layer is responsible for <strong>data ingestion, processing, and API services</strong>.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="frameworks-used"><strong>Frameworks Used</strong><a href="#frameworks-used" class="hash-link" aria-label="Direct link to frameworks-used" title="Direct link to frameworks-used">​</a></h4>
 <ul>
-<li><strong>FastAPI (Python)</strong> for RESTful API development</li>
-<li><strong>Express.js (Node.js)</strong> as an alternative backend</li>
+<li><strong>FastAPI (Python)</strong> Primary framework for RESTful API development, offering high performance and developer efficiency</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="core-functionalities"><strong>Core Functionalities</strong><a href="#core-functionalities" class="hash-link" aria-label="Direct link to core-functionalities" title="Direct link to core-functionalities">​</a></h4>
 <ol>
-<li><strong>Data Ingestion</strong>: Accepts sensor data via <strong>MQTT &amp; HTTP</strong></li>
-<li><strong>Storage &amp; Management</strong>:<!-- -->
-<ul>
-<li><strong>PostgreSQL</strong> for structured data (sensor metadata, users, alerts)</li>
-<li><strong>MongoDB</strong> for time-series sensor readings</li>
-</ul>
-</li>
-<li><strong>Anomaly Detection</strong>: Uses AI/ML to detect abnormal sensor readings</li>
-<li><strong>API Services</strong>: REST API for frontend and WebSocket updates</li>
+<li><strong>Data Ingestion Pipeline:</strong></li>
 </ol>
+<ul>
+<li>MQTT subscription services for real-time data reception</li>
+<li>HTTP endpoints for batch uploads and configuration</li>
+<li>Data validation and normalization routines</li>
+</ul>
+<ol start="2">
+<li><strong>Processing Services:</strong></li>
+</ol>
+<ul>
+<li>Time-series analysis of water quality parameters</li>
+<li>Statistical modeling for baseline establishment</li>
+<li>Threshold monitoring for alerting systems</li>
+</ul>
+<ol start="3">
+<li><strong>API Services:</strong></li>
+</ol>
+<ul>
+<li>RESTful endpoints for dashboard and mobile applications</li>
+<li>WebSocket servers for real-time updates</li>
+<li>Data export capabilities for research and integration</li>
+</ul>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-database-layer">4. Database Layer<a href="#4-database-layer" class="hash-link" aria-label="Direct link to 4. Database Layer" title="Direct link to 4. Database Layer">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-database-layer-1">4. Database Layer<a href="#4-database-layer-1" class="hash-link" aria-label="Direct link to 4. Database Layer" title="Direct link to 4. Database Layer">​</a></h3>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="primary-database-postgresql"><strong>Primary Database: PostgreSQL</strong><a href="#primary-database-postgresql" class="hash-link" aria-label="Direct link to primary-database-postgresql" title="Direct link to primary-database-postgresql">​</a></h4>
 <p>Stores structured data like:</p>
 <ul>
 <li><strong>Sensor metadata</strong> (Device ID, location, calibration details)</li>
-<li><strong>User Management</strong> (Roles, permissions, authentication)</li>
 <li><strong>Alert History</strong> (Triggered alerts, timestamps, responses)</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="time-series-database-mongodb"><strong>Time-Series Database: MongoDB</strong><a href="#time-series-database-mongodb" class="hash-link" aria-label="Direct link to time-series-database-mongodb" title="Direct link to time-series-database-mongodb">​</a></h4>
-<ul>
-<li>Stores high-frequency sensor readings for <strong>fast analytics</strong></li>
-</ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="geospatial-data-handling-postgis"><strong>Geospatial Data Handling: PostGIS</strong><a href="#geospatial-data-handling-postgis" class="hash-link" aria-label="Direct link to geospatial-data-handling-postgis" title="Direct link to geospatial-data-handling-postgis">​</a></h4>
-<ul>
-<li>Enables mapping of sensor nodes for <strong>real-time location tracking</strong></li>
-</ul>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5-frontend-layer">5. Frontend Layer<a href="#5-frontend-layer" class="hash-link" aria-label="Direct link to 5. Frontend Layer" title="Direct link to 5. Frontend Layer">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="5-frontend-layer-1">5. Frontend Layer<a href="#5-frontend-layer-1" class="hash-link" aria-label="Direct link to 5. Frontend Layer" title="Direct link to 5. Frontend Layer">​</a></h3>
+<p>User-facing interfaces providing visualization, configuration, and alerting capabilities.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="technology-stack"><strong>Technology Stack</strong><a href="#technology-stack" class="hash-link" aria-label="Direct link to technology-stack" title="Direct link to technology-stack">​</a></h4>
 <ul>
 <li><strong>React.js</strong>: For UI development</li>
@@ -94,36 +93,32 @@ The <strong>IoT-Based Distributed Lake Monitoring System</strong> is designed to
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="dashboard-features"><strong>Dashboard Features</strong><a href="#dashboard-features" class="hash-link" aria-label="Direct link to dashboard-features" title="Direct link to dashboard-features">​</a></h4>
 <ul>
-<li>** Real-time Data Visualization** with Charts.js/Recharts</li>
-<li>** Alerts &amp; Notifications** (Email, SMS, WebSockets)</li>
-<li>** Map Integration** (Leaflet.js, Google Maps API)</li>
+<li><strong>Interactive Dashboard:</strong> Real-time visualization of sensor readings with customizable views using Recharts</li>
+<li><strong>Geospatial Mapping:</strong> Leaflet.js implementation showing sensor node locations and status</li>
+<li><strong>Alert Management:</strong> Configuration interface for threshold settings and notification preferences</li>
+<li><strong>Trend Analysis:</strong> Historical data visualization with customizable date ranges</li>
+<li><strong>System Administration:</strong> Node configuration and user management interfaces</li>
 </ul>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="6-deployment--infrastructure">6. Deployment &amp; Infrastructure<a href="#6-deployment--infrastructure" class="hash-link" aria-label="Direct link to 6. Deployment &amp; Infrastructure" title="Direct link to 6. Deployment &amp; Infrastructure">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deployment--infrastructure">Deployment &amp; Infrastructure<a href="#deployment--infrastructure" class="hash-link" aria-label="Direct link to Deployment &amp; Infrastructure" title="Direct link to Deployment &amp; Infrastructure">​</a></h2>
 <ul>
-<li><strong>Docker</strong>: Containerized backend, frontend, and databases</li>
-<li><strong>Cloud Hosting</strong>:<!-- -->
-<ul>
-<li>AWS (EC2, RDS, IoT Core)</li>
-<li>GCP (Compute Engine, Pub/Sub)</li>
-</ul>
-</li>
-<li><strong>Load Balancing</strong>: Kubernetes, Nginx, AWS ALB</li>
-<li><strong>CI/CD Pipelines</strong>: GitHub Actions for automated deployment</li>
+<li><strong>Docker</strong>: Containerized backend and databases</li>
+<li><strong>Cloud Hosting</strong>: AWS (EC2, RDS, IoT Core)</li>
+<li><strong>Load Balancing</strong>: AWS ALB</li>
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="workflow-summary"><strong>Workflow Summary</strong><a href="#workflow-summary" class="hash-link" aria-label="Direct link to workflow-summary" title="Direct link to workflow-summary">​</a></h2>
+<p>The NammaLakes system follows a logical data flow sequence:</p>
 <ol>
-<li><strong>IoT Sensors</strong> collect real-time water quality data via <strong>MQTT/HTTP</strong></li>
-<li><strong>Edge devices (ESP32/Raspberry Pi)</strong> preprocess and transmit data</li>
-<li><strong>Backend (FastAPI/Express)</strong> processes and stores sensor data</li>
-<li><strong>Anomaly detection triggers alerts for abnormal conditions</strong></li>
-<li><strong>Frontend (React)</strong> visualizes real-time data on dashboards</li>
-<li><strong>Users receive alerts via notifications (email, SMS, web)</strong></li>
+<li><strong>Sensor Data Collection:</strong> Edge devices gather readings from attached sensors</li>
+<li><strong>Edge Processing:</strong> Initial filtering and validation at the source</li>
+<li><strong>Data Transmission:</strong> MQTT/HTTP protocols transmit data to the backend</li>
+<li><strong>Data Ingestion:</strong> Backend services receive, validate, and normalize readings</li>
+<li><strong>Storage:</strong> Structured storage across PostgreSQL</li>
+<li><strong>Processing &amp; Analysis:</strong> Statistical analysis and threshold monitoring</li>
+<li><strong>Visualization:</strong> Real-time dashboard updates via WebSockets</li>
+<li><strong>Alerting:</strong> Notification dispatch when parameters exceed thresholds sent via <strong>emails, Whatsapp and Telegram bots.</strong></li>
 </ol>
-<hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion"><strong>Conclusion</strong><a href="#conclusion" class="hash-link" aria-label="Direct link to conclusion" title="Direct link to conclusion">​</a></h2>
-<p>This system provides a <strong>scalable and efficient lake monitoring solution</strong> with real-time data collection, visualization, and anomaly detection.</p>
-<hr></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/why"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Why NammaLake</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/System Design"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">System Design</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#understanding-the-architecture" class="table-of-contents__link toc-highlight"><strong>Understanding the Architecture</strong></a></li><li><a href="#system-architecture" class="table-of-contents__link toc-highlight"><strong>System Architecture</strong></a><ul><li><a href="#1-iot-layer-edge-devices" class="table-of-contents__link toc-highlight">1. IoT Layer (Edge Devices)</a></li><li><a href="#2-communication-layer" class="table-of-contents__link toc-highlight">2. Communication Layer</a></li><li><a href="#3-backend-layer" class="table-of-contents__link toc-highlight">3. Backend Layer</a></li><li><a href="#4-database-layer" class="table-of-contents__link toc-highlight">4. Database Layer</a></li><li><a href="#5-frontend-layer" class="table-of-contents__link toc-highlight">5. Frontend Layer</a></li><li><a href="#6-deployment--infrastructure" class="table-of-contents__link toc-highlight">6. Deployment &amp; Infrastructure</a></li></ul></li><li><a href="#workflow-summary" class="table-of-contents__link toc-highlight"><strong>Workflow Summary</strong></a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight"><strong>Conclusion</strong></a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NammaLakes.</div></div></div></footer></div>
+<hr></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/why"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Why NammaLake</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/System Design"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">System Design</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#understanding-the-architecture" class="table-of-contents__link toc-highlight"><strong>Understanding the Architecture</strong></a></li><li><a href="#system-architecture" class="table-of-contents__link toc-highlight"><strong>System Architecture</strong></a><ul><li><a href="#1-iot-layer-edge-devices-1" class="table-of-contents__link toc-highlight">1. IoT Layer (Edge Devices)</a></li><li><a href="#2-communication-layer-1" class="table-of-contents__link toc-highlight">2. Communication Layer</a></li><li><a href="#3-backend-layer-1" class="table-of-contents__link toc-highlight">3. Backend Layer</a></li><li><a href="#4-database-layer-1" class="table-of-contents__link toc-highlight">4. Database Layer</a></li><li><a href="#5-frontend-layer-1" class="table-of-contents__link toc-highlight">5. Frontend Layer</a></li></ul></li><li><a href="#deployment--infrastructure" class="table-of-contents__link toc-highlight">Deployment &amp; Infrastructure</a></li><li><a href="#workflow-summary" class="table-of-contents__link toc-highlight"><strong>Workflow Summary</strong></a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NammaLakes.</div></div></div></footer></div>
 </body>
 </html>
