@@ -71,8 +71,3 @@ The system consists of **three major layers**:
 - Implements **load balancing (AWS ALB)** for handling high data influx.
 
 ---
-
-##  Conclusion
-The **IoT-Based Lake Monitoring System** integrates **IoT, cloud computing, and real-time analytics** to provide an efficient and scalable solution for water quality monitoring. This design ensures **high accuracy, automation, and ease of access** for stakeholders.
-
----
