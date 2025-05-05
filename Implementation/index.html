@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">Implementation - IoT-Based Lake Monitoring System | Lake Monitoring System</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://nammalakes.github.io/docs/Implementation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Implementation - IoT-Based Lake Monitoring System | Lake Monitoring System"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/docs/img/icon.ico"><link data-rh="true" rel="canonical" href="https://nammalakes.github.io/docs/Implementation"><link data-rh="true" rel="alternate" href="https://nammalakes.github.io/docs/Implementation" hreflang="en"><link data-rh="true" rel="alternate" href="https://nammalakes.github.io/docs/Implementation" hreflang="x-default"><link rel="stylesheet" href="/docs/assets/css/styles.9e4803b6.css">
-<script src="/docs/assets/js/runtime~main.4f49267a.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.f6075c12.js" defer="defer"></script>
 <script src="/docs/assets/js/main.d1fada3a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -15,7 +15,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-hardware-setup">1. Hardware Setup<a href="#1-hardware-setup" class="hash-link" aria-label="Direct link to 1. Hardware Setup" title="Direct link to 1. Hardware Setup">​</a></h2>
 <p>The IoT sensor nodes are deployed at different locations around the lake to collect real-time water quality data.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="iot-devices--sensors"><strong>IoT Devices &amp; Sensors</strong><a href="#iot-devices--sensors" class="hash-link" aria-label="Direct link to iot-devices--sensors" title="Direct link to iot-devices--sensors">​</a></h3>
-<table><thead><tr><th>Component</th><th>Description</th></tr></thead><tbody><tr><td><strong>ESP32</strong></td><td>Low-power microcontroller for sensor data collection</td></tr><tr><td><strong>Raspberry Pi</strong></td><td>Acts as a gateway for processing and transmitting data</td></tr><tr><td><strong>pH Sensor</strong></td><td>Measures water acidity</td></tr><tr><td><strong>Turbidity Sensor</strong></td><td>Detects suspended particles in water</td></tr><tr><td><strong>Temperature Sensor</strong></td><td>Monitors water temperature</td></tr><tr><td><strong>Dissolved Oxygen Sensor</strong></td><td>Measures oxygen levels</td></tr><tr><td><strong>Conductivity Sensor</strong></td><td>Analyzes salinity and dissolved minerals</td></tr></tbody></table>
+<table><thead><tr><th>Component</th><th>Description</th></tr></thead><tbody><tr><td><strong>ESP32</strong></td><td>Low-power microcontroller for sensor data collection</td></tr><tr><td><strong>Raspberry Pi</strong></td><td>Acts as a gateway for processing and transmitting data</td></tr><tr><td><strong>pH Sensor</strong></td><td>Measures water acidity</td></tr><tr><td><strong>Temperature Sensor</strong></td><td>Monitors water temperature</td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="connection--communication">Connection &amp; Communication<a href="#connection--communication" class="hash-link" aria-label="Direct link to Connection &amp; Communication" title="Direct link to Connection &amp; Communication">​</a></h3>
 <ul>
 <li>Sensors are interfaced with <strong>ESP32 / Raspberry Pi</strong> via <strong>GPIO/PWM/I2C</strong>.</li>
@@ -25,14 +25,14 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-backend-development">2. Backend Development<a href="#2-backend-development" class="hash-link" aria-label="Direct link to 2. Backend Development" title="Direct link to 2. Backend Development">​</a></h2>
 <p>The backend is responsible for <strong>data processing, storage, and real-time analytics</strong>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="technologies-used">Technologies Used<a href="#technologies-used" class="hash-link" aria-label="Direct link to Technologies Used" title="Direct link to Technologies Used">​</a></h3>
-<table><thead><tr><th>Component</th><th>Technology</th></tr></thead><tbody><tr><td><strong>Backend Framework</strong></td><td>FastAPI (Python) / Express.js (Node.js)</td></tr><tr><td><strong>Database</strong></td><td>PostgreSQL (Structured Data), MongoDB (Time-Series Data)</td></tr><tr><td><strong>Message Broker</strong></td><td>MQTT (IoT Data Communication)</td></tr><tr><td><strong>Cloud Storage</strong></td><td>AWS S3 / GCP Cloud Storage</td></tr></tbody></table>
+<table><thead><tr><th>Component</th><th>Technology</th></tr></thead><tbody><tr><td><strong>Backend Framework</strong></td><td>FastAPI (Python)</td></tr><tr><td><strong>Database</strong></td><td>PostgreSQL</td></tr><tr><td><strong>Message Broker</strong></td><td>MQTT (IoT Data Communication)</td></tr><tr><td><strong>Cloud Storage</strong></td><td>AWS</td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="api-endpoints">API Endpoints<a href="#api-endpoints" class="hash-link" aria-label="Direct link to API Endpoints" title="Direct link to API Endpoints">​</a></h3>
-<table><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td><strong>POST</strong></td><td><code>/api/sensor-data</code></td><td>Receives data from IoT devices</td></tr><tr><td><strong>GET</strong></td><td><code>/api/data/latest</code></td><td>Fetches latest sensor readings</td></tr><tr><td><strong>GET</strong></td><td><code>/api/alerts</code></td><td>Retrieves abnormal condition alerts</td></tr></tbody></table>
+<table><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead><tbody><tr><td><strong>POST</strong> <code>/api/v1/sensors/readings</code></td><td>Stores data in the database</td><td></td></tr><tr><td><strong>GET</strong> <code>/api/v1/sensors/readings/latest</code></td><td>Retrieves data from the nodes</td><td></td></tr><tr><td><strong>GET</strong> <code>/api/v1/alerts</code></td><td>Retrieves any alerts from the particular nodes</td><td></td></tr><tr><td><strong>GET</strong> <code>/api/v1/sensors</code></td><td>Retrieve all sensor nodes</td><td></td></tr><tr><td><strong>GET</strong> <code>/api/v1/dashboard/stats</code></td><td>Fetch dashboard statistics</td><td></td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="data-ingestion-process">Data Ingestion Process<a href="#data-ingestion-process" class="hash-link" aria-label="Direct link to Data Ingestion Process" title="Direct link to Data Ingestion Process">​</a></h3>
 <ol>
 <li>IoT devices <strong>send sensor data</strong> via <strong>MQTT/HTTP</strong>.</li>
 <li>Backend <strong>validates &amp; processes</strong> data.</li>
-<li>Data is <strong>stored in PostgreSQL &amp; MongoDB</strong>.</li>
+<li>Data is <strong>stored in PostgreSQL</strong>.</li>
 <li><strong>Anomaly detection</strong> triggers alerts for abnormal values.</li>
 <li><strong>Frontend dashboard updates</strong> in real time.</li>
 </ol>
@@ -40,61 +40,45 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-frontend-development">3. Frontend Development<a href="#3-frontend-development" class="hash-link" aria-label="Direct link to 3. Frontend Development" title="Direct link to 3. Frontend Development">​</a></h2>
 <p>The frontend provides <strong>an interactive dashboard</strong> for visualization.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="technologies-used-1">Technologies Used<a href="#technologies-used-1" class="hash-link" aria-label="Direct link to Technologies Used" title="Direct link to Technologies Used">​</a></h3>
-<table><thead><tr><th>Feature</th><th>Technology</th></tr></thead><tbody><tr><td><strong>Framework</strong></td><td>React (Vite)</td></tr><tr><td><strong>Visualization</strong></td><td>Recharts, Leaflet.js (Maps)</td></tr><tr><td><strong>Authentication</strong></td><td>Firebase/Auth0</td></tr><tr><td><strong>Notifications</strong></td><td>WebSockets, Push Notifications</td></tr></tbody></table>
+<table><thead><tr><th>Feature</th><th>Technology</th></tr></thead><tbody><tr><td><strong>Framework</strong></td><td>React (Vite)</td></tr><tr><td><strong>Visualization</strong></td><td>Recharts, Leaflet.js (Maps)</td></tr><tr><td><strong>Notifications</strong></td><td>WebSockets, Push Notifications</td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="dashboard-features">Dashboard Features<a href="#dashboard-features" class="hash-link" aria-label="Direct link to Dashboard Features" title="Direct link to Dashboard Features">​</a></h3>
-<p><strong>Real-time Sensor Data Graphs</strong><br>
-<strong>Historical Data Trends</strong><br>
-<strong>Alerts &amp; Notifications for Anomalies</strong><br>
-<strong>Map Integration for Sensor Locations</strong></p>
+<ul>
+<li><strong>Real-time Sensor Data Graphs</strong></li>
+<li><strong>Historical Data Trends</strong></li>
+<li><strong>Alerts &amp; Notifications for Anomalies</strong></li>
+<li><strong>Map Integration for Sensor Locations</strong></li>
+</ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-deployment">4. Deployment<a href="#4-deployment" class="hash-link" aria-label="Direct link to 4. Deployment" title="Direct link to 4. Deployment">​</a></h2>
-<p>The system is deployed on a <strong>cloud infrastructure</strong> with <strong>Docker &amp; Kubernetes</strong>.</p>
+<p>The system is deployed on a <strong>cloud infrastructure</strong> with <strong>Docker</strong>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="steps-for-deployment">Steps for Deployment<a href="#steps-for-deployment" class="hash-link" aria-label="Direct link to Steps for Deployment" title="Direct link to Steps for Deployment">​</a></h3>
 <ol>
 <li>
 <p><strong>Containerization</strong>:</p>
 <ul>
-<li>Create Docker containers for backend and frontend.</li>
+<li>Create Docker containers for backend and database.</li>
 <li>Use <strong>Docker Compose</strong> for local testing.</li>
 </ul>
 </li>
 <li>
 <p><strong>Cloud Deployment</strong>:</p>
 <ul>
-<li>Deploy using <strong>AWS EC2, GCP, or DigitalOcean</strong>.</li>
-<li>Use <strong>Nginx</strong> as a reverse proxy.</li>
+<li>Deploy using <strong>AWS</strong>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Database Setup</strong>:</p>
 <ul>
-<li>Deploy <strong>PostgreSQL &amp; MongoDB</strong> on <strong>AWS RDS</strong> or <strong>Cloud Firestore</strong>.</li>
-</ul>
-</li>
-<li>
-<p><strong>CI/CD Pipeline</strong>:</p>
-<ul>
-<li>Automate deployment with <strong>GitHub Actions / Jenkins</strong>.</li>
+<li>Deploy <strong>PostgreSQL</strong> on <strong>AWS</strong>.</li>
 </ul>
 </li>
 </ol>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5-security--optimization">5. Security &amp; Optimization<a href="#5-security--optimization" class="hash-link" aria-label="Direct link to 5. Security &amp; Optimization" title="Direct link to 5. Security &amp; Optimization">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="security-measures">Security Measures<a href="#security-measures" class="hash-link" aria-label="Direct link to Security Measures" title="Direct link to Security Measures">​</a></h3>
-<ul>
-<li><strong>TLS Encryption</strong> for secure data transmission.</li>
-<li><strong>JWT-based Authentication</strong> for API access.</li>
-<li><strong>Firewall &amp; Access Control</strong> for backend protection.</li>
-</ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance-optimization">Performance Optimization<a href="#performance-optimization" class="hash-link" aria-label="Direct link to Performance Optimization" title="Direct link to Performance Optimization">​</a></h3>
 <ul>
-<li>Implement <strong>caching (Redis)</strong> to optimize data retrieval.</li>
 <li>Optimize <strong>database queries</strong> using indexing.</li>
 <li>Use <strong>load balancing</strong> for high availability.</li>
 </ul>
-<hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
-<p>This implementation strategy ensures a <strong>robust, scalable, and efficient</strong> IoT-Based Lake Monitoring System. By integrating <strong>IoT, cloud, and real-time analytics</strong>, the system enables <strong>automated monitoring, anomaly detection, and user-friendly visualization</strong>.</p>
-<hr></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/System Design"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">System Design</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/testing"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Testing</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#1-hardware-setup" class="table-of-contents__link toc-highlight">1. Hardware Setup</a><ul><li><a href="#iot-devices--sensors" class="table-of-contents__link toc-highlight"><strong>IoT Devices &amp; Sensors</strong></a></li><li><a href="#connection--communication" class="table-of-contents__link toc-highlight">Connection &amp; Communication</a></li></ul></li><li><a href="#2-backend-development" class="table-of-contents__link toc-highlight">2. Backend Development</a><ul><li><a href="#technologies-used" class="table-of-contents__link toc-highlight">Technologies Used</a></li><li><a href="#api-endpoints" class="table-of-contents__link toc-highlight">API Endpoints</a></li><li><a href="#data-ingestion-process" class="table-of-contents__link toc-highlight">Data Ingestion Process</a></li></ul></li><li><a href="#3-frontend-development" class="table-of-contents__link toc-highlight">3. Frontend Development</a><ul><li><a href="#technologies-used-1" class="table-of-contents__link toc-highlight">Technologies Used</a></li><li><a href="#dashboard-features" class="table-of-contents__link toc-highlight">Dashboard Features</a></li></ul></li><li><a href="#4-deployment" class="table-of-contents__link toc-highlight">4. Deployment</a><ul><li><a href="#steps-for-deployment" class="table-of-contents__link toc-highlight">Steps for Deployment</a></li></ul></li><li><a href="#5-security--optimization" class="table-of-contents__link toc-highlight">5. Security &amp; Optimization</a><ul><li><a href="#security-measures" class="table-of-contents__link toc-highlight">Security Measures</a></li><li><a href="#performance-optimization" class="table-of-contents__link toc-highlight">Performance Optimization</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NammaLakes.</div></div></div></footer></div>
+<hr></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/System Design"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">System Design</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/testing"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Testing</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#1-hardware-setup" class="table-of-contents__link toc-highlight">1. Hardware Setup</a><ul><li><a href="#iot-devices--sensors" class="table-of-contents__link toc-highlight"><strong>IoT Devices &amp; Sensors</strong></a></li><li><a href="#connection--communication" class="table-of-contents__link toc-highlight">Connection &amp; Communication</a></li></ul></li><li><a href="#2-backend-development" class="table-of-contents__link toc-highlight">2. Backend Development</a><ul><li><a href="#technologies-used" class="table-of-contents__link toc-highlight">Technologies Used</a></li><li><a href="#api-endpoints" class="table-of-contents__link toc-highlight">API Endpoints</a></li><li><a href="#data-ingestion-process" class="table-of-contents__link toc-highlight">Data Ingestion Process</a></li></ul></li><li><a href="#3-frontend-development" class="table-of-contents__link toc-highlight">3. Frontend Development</a><ul><li><a href="#technologies-used-1" class="table-of-contents__link toc-highlight">Technologies Used</a></li><li><a href="#dashboard-features" class="table-of-contents__link toc-highlight">Dashboard Features</a></li></ul></li><li><a href="#4-deployment" class="table-of-contents__link toc-highlight">4. Deployment</a><ul><li><a href="#steps-for-deployment" class="table-of-contents__link toc-highlight">Steps for Deployment</a></li><li><a href="#performance-optimization" class="table-of-contents__link toc-highlight">Performance Optimization</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NammaLakes.</div></div></div></footer></div>
 </body>
 </html>
