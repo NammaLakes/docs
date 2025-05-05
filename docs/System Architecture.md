@@ -11,103 +11,110 @@ sidebar_label: System Architecture
 It is crucial to grasp how various components interact to achieve seamless data collection, processing, and visualization. It provides insights into the roles of IoT devices, communication protocols, backend services, and frontend interfaces, ensuring a holistic view of the system's functionality and scalability.
 The **IoT-Based Distributed Lake Monitoring System** is designed to track water quality parameters in real time across multiple sensor nodes deployed in a lake. The system provides an **interactive dashboard**, **alerts for anomalies**, and **geospatial mapping** of sensor locations.
 
-![System Architecture](data_flow.jpeg)
+![System Architecture](arch.jpeg)
 ## **System Architecture**
+
+The NammaLakes platform is structured into five distinct but interconnected layers, each serving specific functions within the ecosystem:
+
+   #### 1. IoT Layer (Edge Devices)
+   #### 2. Communication Layer
+   #### 3. Backend Layer
+   #### 4. Database Layer
+   #### 5. Frontend Layer
 
 ### 1. IoT Layer (Edge Devices)
 This layer consists of **ESP32 and Raspberry Pi** devices that collect real-time data from multiple sensors deployed across the lake.
 
 #### **Devices & Sensors**
 - **ESP32**: Used for low-power, low-cost sensor nodes  
-- **Raspberry Pi**: Used for more computationally intensive tasks (e.g., local AI/ML processing)  
+- **Raspberry Pi**: Used for more computationally intensive tasks (e.g., local data processing)  
 - **Sensors Used:**  
   -  **pH Sensor**: Measures water acidity  
-  -  **Temperature Sensor**: Monitors temperature variations  
-  -  **Turbidity Sensor**: Detects suspended particles  
-  -  **Dissolved Oxygen Sensor**: Measures oxygen concentration  
-  -  **Conductivity Sensor**: Determines dissolved salts and chemicals  
-
-#### **Data Communication**
-- **MQTT Protocol**: Ensures low-latency real-time telemetry  
-- **HTTP REST API**: Used for periodic updates  
-- **Edge Processing**: Filters noisy sensor data before transmission  
-
+  -  **Temperature Sensor**: Monitors temperature variations
 ---
 
 ### 2. Communication Layer
-- **MQTT Broker** (e.g., EMQX, Mosquitto) for real-time streaming  
-- **WebSockets** for real-time dashboard updates  
-- **Security Measures**:  
-  -  **TLS/SSL encryption** for secure data transmission  
-  -  **OAuth2/JWT authentication** for API access  
 
+This intermediate layer enables reliable data transmission between edge devices and backend services.
+
+#### Protocols and Infrastructure
+- **MQTT Protocol:** Primary communication method providing low-latency, reliable telemetry transmission
+- **MQTT Broker:** Mosquitto implementation for message queuing and distribution
+- **HTTP REST APIs:** Secondary method for periodic updates and configuration changes
+- **WebSockets:** Supporting bidirectional real-time communication for dashboard updates
 ---
 
 ### 3. Backend Layer
 This layer is responsible for **data ingestion, processing, and API services**.
 
 #### **Frameworks Used**
--  **FastAPI (Python)** for RESTful API development  
--  **Express.js (Node.js)** as an alternative backend  
+-  **FastAPI (Python)** Primary framework for RESTful API development, offering high performance and developer efficiency 
 
 #### **Core Functionalities**
-1. **Data Ingestion**: Accepts sensor data via **MQTT & HTTP**  
-2. **Storage & Management**:  
-   - **PostgreSQL** for structured data (sensor metadata, users, alerts)  
-   - **MongoDB** for time-series sensor readings  
-3. **Anomaly Detection**: Uses AI/ML to detect abnormal sensor readings  
-4. **API Services**: REST API for frontend and WebSocket updates  
+1. **Data Ingestion Pipeline:**
+
+- MQTT subscription services for real-time data reception
+- HTTP endpoints for batch uploads and configuration
+- Data validation and normalization routines
+
+2. **Processing Services:**
+
+- Time-series analysis of water quality parameters
+- Statistical modeling for baseline establishment
+- Threshold monitoring for alerting systems
+
+3. **API Services:**
+
+- RESTful endpoints for dashboard and mobile applications
+- WebSocket servers for real-time updates
+- Data export capabilities for research and integration
 
 ---
 
 ### 4. Database Layer
+
 #### **Primary Database: PostgreSQL**
 Stores structured data like:
 -  **Sensor metadata** (Device ID, location, calibration details)  
--  **User Management** (Roles, permissions, authentication)  
 -  **Alert History** (Triggered alerts, timestamps, responses)  
-
-#### **Time-Series Database: MongoDB**
-- Stores high-frequency sensor readings for **fast analytics**  
-
-#### **Geospatial Data Handling: PostGIS**
-- Enables mapping of sensor nodes for **real-time location tracking**  
 
 ---
 
 ### 5. Frontend Layer
+
+User-facing interfaces providing visualization, configuration, and alerting capabilities.
+
 #### **Technology Stack**
 -  **React.js**: For UI development  
 -  **Docusaurus**: For system documentation  
 
 #### **Dashboard Features**
-- ** Real-time Data Visualization** with Charts.js/Recharts  
-- ** Alerts & Notifications** (Email, SMS, WebSockets)  
-- ** Map Integration** (Leaflet.js, Google Maps API)  
+
+- **Interactive Dashboard:** Real-time visualization of sensor readings with customizable views using Recharts
+- **Geospatial Mapping:** Leaflet.js implementation showing sensor node locations and status
+- **Alert Management:** Configuration interface for threshold settings and notification preferences
+- **Trend Analysis:** Historical data visualization with customizable date ranges
+- **System Administration:** Node configuration and user management interfaces
 
 ---
 
-### 6. Deployment & Infrastructure
-- **Docker**: Containerized backend, frontend, and databases  
-- **Cloud Hosting**:  
-  - AWS (EC2, RDS, IoT Core)  
-  - GCP (Compute Engine, Pub/Sub)  
-- **Load Balancing**: Kubernetes, Nginx, AWS ALB  
-- **CI/CD Pipelines**: GitHub Actions for automated deployment  
-
+## Deployment & Infrastructure
+- **Docker**: Containerized backend and databases  
+- **Cloud Hosting**: AWS (EC2, RDS, IoT Core)  
+- **Load Balancing**: AWS ALB  
 ---
 
 ## **Workflow Summary**
-1. **IoT Sensors** collect real-time water quality data via **MQTT/HTTP**  
-2. **Edge devices (ESP32/Raspberry Pi)** preprocess and transmit data  
-3. **Backend (FastAPI/Express)** processes and stores sensor data  
-4. **Anomaly detection triggers alerts for abnormal conditions**  
-5. **Frontend (React)** visualizes real-time data on dashboards  
-6. **Users receive alerts via notifications (email, SMS, web)**  
 
----
+The NammaLakes system follows a logical data flow sequence:
 
-## **Conclusion**
-This system provides a **scalable and efficient lake monitoring solution** with real-time data collection, visualization, and anomaly detection.
+1. **Sensor Data Collection:** Edge devices gather readings from attached sensors
+2. **Edge Processing:** Initial filtering and validation at the source
+3. **Data Transmission:** MQTT/HTTP protocols transmit data to the backend
+4. **Data Ingestion:** Backend services receive, validate, and normalize readings
+5. **Storage:** Structured storage across PostgreSQL
+6. **Processing & Analysis:** Statistical analysis and threshold monitoring
+7. **Visualization:** Real-time dashboard updates via WebSockets
+8. **Alerting:** Notification dispatch when parameters exceed thresholds sent via **emails, Whatsapp and Telegram bots.**
 
 ---

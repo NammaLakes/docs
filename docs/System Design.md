@@ -10,7 +10,7 @@ sidebar_label: System Design
 The **IoT-Based Distributed Lake Monitoring System** is designed to **collect, process, and analyze** water quality parameters using **IoT sensors, cloud computing, and real-time analytics**. This section explains the **high-level architecture**, **hardware components**, **software stack**, and **data flow** in the system.
 
 ---
-![System Architecture](arch.jpeg)
+![System Architecture](sys_design.svg)
 ## **1. High-Level Architecture**
 The system consists of **three major layers**:
 
@@ -20,14 +20,14 @@ The system consists of **three major layers**:
    - Transmits data via **MQTT** or **REST APIs**.
 
 2. **Cloud & Processing Layer**  
-   - Uses **FastAPI (Python) / Express (Node.js)** for backend processing.
-   - Stores structured data in **PostgreSQL** and time-series data in **MongoDB**.
+   - Uses **FastAPI (Python)** for backend processing.
+   - Stores structured data in **PostgreSQL**.
    - Performs **anomaly detection** and **data analytics**.
 
 3. **Application & Visualization Layer**  
    - Provides a **React-based dashboard** for real-time monitoring.
    - Implements **Docusaurus** for system documentation.
-   - Uses **Leaflet.js / Google Maps API** for **geospatial visualization**.
+   - Uses **Leaflet.js** for **geospatial visualization**.
 
 ---
 
@@ -40,28 +40,24 @@ The system consists of **three major layers**:
 | Sensor | Parameter Measured |
 |--------|-------------------|
 | **pH Sensor** | Water acidity level |
-| **Turbidity Sensor** | Suspended particles in water |
 | **Temperature Sensor** | Water temperature |
-| **Dissolved Oxygen Sensor** | Oxygen levels in water |
-| **Conductivity Sensor** | Salinity and dissolved minerals |
-
 ---
 
 ## **3. Software Stack**
 | Component | Technology Used |
 |-----------|----------------|
 | **Frontend** | React.js + Recharts (Data Visualization) |
-| **Backend** | FastAPI (Python) / Express.js (Node.js) |
-| **Database** | PostgreSQL (Structured Data), MongoDB (Sensor Data) |
+| **Backend** | FastAPI (Python)|
+| **Database** | PostgreSQL (Structured Data)|
 | **Messaging Protocol** | MQTT (IoT Data Transfer) |
-| **Cloud Deployment** | Docker + AWS/GCP |
+| **Cloud Deployment** | Docker + AWS |
 
 ---
 
 ## **4. Data Flow & Communication**
 1. **Sensor Nodes (ESP32/Raspberry Pi)** collect water quality data.  
 2. **Data is transmitted** via **MQTT/REST API** to the backend.  
-3. **Backend processes and stores** data in **PostgreSQL / MongoDB**.  
+3. **Backend processes and stores** data in **PostgreSQL**.  
 4. **Anomaly detection module** triggers alerts if abnormal values are detected.  
 5. **Frontend Dashboard** updates in **real-time** via WebSockets.  
 6. **Alerts & Notifications** are sent via **Email/SMS** if critical thresholds are breached.  
@@ -71,13 +67,8 @@ The system consists of **three major layers**:
 ## **5. System Scalability & Security**
 ###  Scalability Considerations
 - Supports **multiple sensor nodes** for **distributed monitoring**.
-- Uses **Kubernetes & Docker** for **scalable backend deployment**.
-- Implements **load balancing (Nginx, AWS ALB)** for handling high data influx.
-
-###  Security Measures
-- **TLS Encryption** for secure data transmission.
-- **OAuth2 / JWT Authentication** for API access.
-- **Role-Based Access Control (RBAC)** for user permissions.
+- Uses **Docker** for **scalable backend deployment**.
+- Implements **load balancing (AWS ALB)** for handling high data influx.
 
 ---
 
